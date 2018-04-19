@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# ES6
+
+---
+
+# Agenda
+
+1. let und const
+2. Arrow Funktions
+3. Template Literals
+
+---
+
+# let und const
+
+- let und const sind eine verbesserte Version des bisherigen var.
+- Zuvor sind Variabeln mit var für die ganze Funktion declariert worden, was zu einigen Fehlern geführt hat. Mit let lassen sich Variabeln für den jeweiligen Klammerblock {...} declarieren.
+- const ermöglich das Erstellen von richtigen Konstanten. Bisher musste man dafür auf Objekte ausweichen.
+
+---
+
+# Arrow Funktions
+
+Die Pfeilfunktionen sorgen dafür, dass der Code kürtzer und verständlicher wird.
+```javascript
+var output = input.map(function(x) {
+    return x * 2;
+});
+```
+
+Das Wort "funktion" und die dazugehörigen Klammern lassen sich durch die Pfeilfunktion ersetzten.
+```javascript
+var output = input.map((x)=> {
+	return x * 2;
+});
+```
+
+In diesem Fall besteht die Funktion aus nur einem Befehl, wodurch das return und Semikolon ebenfalls rausgelassen werden können.
+```javascript
+var output = input.map((x)=>x*2);
+```
+---
+
+# Template Literals
+
+- Template Literals werden durch backquotes (`) verwendet und vereinfachen die Benutzung von Strings.
+```javascript
+var text = `Hallo Welt`;
+```
+
+- Anführungszeichen brauchen nicht escaped werden und für lange Texte werden keine Verbindungselemente benötigt.
+```javascript
+var text = `Ein se'e"eeeeeeeeeeeeeeeeeeeeeehr 
+langer text`; // remark erkennt es jedoch noch nicht
+```
+
+- Variabeln lassen sich durch ${} leicht in Strings einfügen.
+```javascript
+var name = "Siri"
+var text = `Mein Name ist ${name}`;
+```
+---
+# Introduction
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
